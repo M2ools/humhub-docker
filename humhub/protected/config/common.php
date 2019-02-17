@@ -18,8 +18,8 @@ return [
             'clients' => [
                 'google' => [
                     'class' => 'humhub\modules\user\authclient\Google',
-                    'clientId' => '575870146045-bb2vu09okp05t3f0k2mbmh1rkqfvvukh.apps.googleusercontent.com',
-                    'clientSecret' => 'nTu3fVdItuzDJAWaEczBX5I4',
+                    'clientId' => '575870146045-dhpr4u5iv5nbq6u0gsht3t6m7ldi3h18.apps.googleusercontent.com',
+                    'clientSecret' => 'ywmG3oQLkopPqLksx9UcMzRr',
                 ],
             ],
         ],

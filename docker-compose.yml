@@ -5,14 +5,14 @@ services:
     links:
       - "db:db"
     ports:
-      - "8080:80"
+      - "8075:80"
     environment:
       HUMHUB_DB_USER: root
       HUMHUB_DB_PASSWORD: root
       HUMHUB_AUTO_INSTALL: 1
       HUMHUB_DEBUG: 1
-#   volumes:
-#     - "${HUMHUB_VOLUME_CONFIG}:/var/www/localhost/htdocs/protected/config"
+    volumes:
+      - ./humhub/protected/config/common.php:/var/www/localhost/htdocs/protected/config/common.php
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/ping"]
       interval: 30s
@@ -23,8 +23,13 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: humhub
+    volumes:
+      - db-data:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "--silent"]
       interval: 30s
       timeout: 10s
       retries: 3
+
+volumes:
+  db-data:
