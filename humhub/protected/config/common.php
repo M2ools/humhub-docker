@@ -14,5 +14,14 @@ return [
             'showScriptName' => false,
             'enablePrettyUrl' => true,
         ],
-    ]
+        'authClientCollection' => [
+            'clients' => [
+                'google' => [
+                    'class' => 'humhub\modules\user\authclient\Google',
+                    'clientId' => '575870146045-bb2vu09okp05t3f0k2mbmh1rkqfvvukh.apps.googleusercontent.com',
+                    'clientSecret' => 'nTu3fVdItuzDJAWaEczBX5I4',
+                ],
+            ],
+        ],
+    ],
 ];
